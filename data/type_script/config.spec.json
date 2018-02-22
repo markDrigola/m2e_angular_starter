@@ -1,5 +1,5 @@
 {
-  "extends": "../tsconfig.json",
+  "extends": "./config.json",
   "compilerOptions": {
     "outDir": "../out-tsc/spec",
     "baseUrl": "./",
@@ -10,10 +10,11 @@
     ]
   },
   "files": [
-    "test.ts"
+    "../../misc/tests/test.ts"
   ],
   "include": [
-    "**/*.spec.ts",
-    "**/*.d.ts"
-  ]
+    "../../src/**/*.spec.ts",
+    "../../src/**/*.d.ts"
+  ],
+  "exclude": []
 }
