@@ -28,12 +28,12 @@ export class AppComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        // console.log(this.coreMetadata.get('/name/'));
-        // console.log(this.baseMetadata);
-        // console.log(this.projectMetadata);
-        // console.log(this.test);
-        // console.log('coreData', this.coreDataConfig);
-        // console.log('managerFactory', );
+        console.log(this.coreMetadata.get('/name/'));
+        console.log(this.baseMetadata);
+        console.log(this.projectMetadata);
+        console.log(this.test);
+        console.log('coreData', this.coreDataConfig);
+        console.log('managerFactory', );
 
         this.managerConfig = this.managerConfigFactory.create();
 

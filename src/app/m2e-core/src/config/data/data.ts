@@ -10,10 +10,10 @@ export class Data {
         private data,
         private dataManipulation: DataManipulation
     ) {
-        this.rebuildingData(this.data);
+        this.dataAllItems = this.rebuildingData(this.data);
     }
 
-    rebuildingData(data) {
+    private rebuildingData(data) {
         const keysObject = Object.keys(data);
         let result = {};
 
@@ -23,10 +23,10 @@ export class Data {
             result = _.merge(result, this.createNewObject(arrayPath, data[keysObject[i]]));
         }
 
-        return this.dataAllItems = result;
+        return result;
     }
 
-    createNewObject(arrayPath, value) {
+    private createNewObject(arrayPath, value) {
         const result = {};
         let iterator = result;
 
