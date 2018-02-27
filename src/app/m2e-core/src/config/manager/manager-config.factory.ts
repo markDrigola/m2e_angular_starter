@@ -16,13 +16,17 @@ export class ManagerConfigFactory {
         private dataManipulation: DataManipulation,
         @Optional() @Inject(REGISTRATION_CONFIG_DATA_TOKEN) private allDataConfig: Data[]
     ) {
-        this.mergeConfigs();
+        this.dataConfig = this.mergeConfigs();
     }
 
     mergeConfigs() {
+        let result = {};
+
         for (let i = 0; i < this.allDataConfig.length; i++) {
-            this.dataConfig = this.dataManipulation.mergeData(this.dataConfig, this.allDataConfig[i].get());
+            result = this.dataManipulation.mergeData(result, this.allDataConfig[i].get());
         }
+
+        return result;
     }
 
     create() {
